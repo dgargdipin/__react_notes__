@@ -13,12 +13,19 @@ var template = (
         </ol>
     </div>
 );
+var user={
+    name:'Dipin',
+    age:26,
+    location:"India",
+}
 var username='Mike';
+var userAge=27;
+var userLocation='India'
 var templateTwo=(
     <div>
-        <h1>{username+'!'}</h1>
-        <p>Age:21</p>
-        <p>Location:India</p>
+        <h1>{user.name}</h1>
+        <p>Age:{user.age}</p>
+        <p>Location:{user.location}</p>
     </div>
 );
 
