@@ -1,34 +1,54 @@
-"use strict";
+'use strict';
 
 console.log("App.js is running");
 var template = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
-        "This is jsx from app.js changesss"
+        'This is jsx from app.js changesss'
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "This is some info"
+        'This is some info'
     ),
     React.createElement(
-        "ol",
+        'ol',
         null,
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item One"
+            'Item One'
         ),
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item two"
+            'Item two'
         )
+    )
+);
+var username = 'Mike';
+var templateTwo = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        username + '!'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'Age:21'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'Location:India'
     )
 );
 
 var appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
