@@ -1,31 +1,35 @@
-"use strict";
+'use strict';
 
 console.log("App.js is running");
+var appInfo = {
+    heading: 'Hi',
+    subtitle: 'subssssss'
+};
 var template = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
-        "This is jsx from app.js changesss"
+        appInfo.heading
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "This is some info"
+        appInfo.subtitle
     ),
     React.createElement(
-        "ol",
+        'ol',
         null,
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item One"
+            'Item One'
         ),
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item two"
+            'Item two'
         )
     )
 );
@@ -34,28 +38,33 @@ var user = {
     age: 26,
     location: "India"
 };
-var username = 'Mike';
-var userAge = 27;
-var userLocation = 'India';
+
+function getLocation(location) {
+    if (location) {
+        return location;
+    } else {
+        return 'unknown';
+    }
+}
 var templateTwo = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
         user.name
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Age:",
+        'Age:',
         user.age
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Location:",
-        user.location
+        'Location:',
+        getLocation(user.location)
     )
 );
 

@@ -1,8 +1,12 @@
 console.log("App.js is running")
+var appInfo={
+    heading:'Hi',
+    subtitle:'subssssss',
+};
 var template = (
     <div>
-        <h1>This is jsx from app.js changesss</h1>
-        <p>This is some info</p>
+        <h1>{appInfo.heading}</h1>
+        <p>{appInfo.subtitle}</p>
         <ol>
             <li>
                 Item One
@@ -17,15 +21,22 @@ var user={
     name:'Dipin',
     age:26,
     location:"India",
+};
+
+function getLocation(location){
+    if(location){
+        return location
+    }
+    else{
+        return 'unknown'
+    }
+    
 }
-var username='Mike';
-var userAge=27;
-var userLocation='India'
 var templateTwo=(
     <div>
         <h1>{user.name}</h1>
         <p>Age:{user.age}</p>
-        <p>Location:{user.location}</p>
+        <p>Location:{getLocation(user.location)}</p>
     </div>
 );
 
