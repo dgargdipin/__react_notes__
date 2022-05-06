@@ -36,6 +36,12 @@ const removeOptions=()=>{
     appInfo.options=[];
     renderTemplate();
 }
+const onMakeDecision=()=>{
+    const randomNum=Math.floor(Math.random()*appInfo.options.length);
+    console.log(randomNum)
+    const option=appInfo.options[randomNum];
+    alert(option);
+}
 const renderTemplate=()=>{
     var template = (
         <div>
@@ -43,7 +49,7 @@ const renderTemplate=()=>{
             {/* <p>{appInfo.subtitle}</p> */}
             {appInfo.subtitle && <p>{appInfo.subtitle}</p>}
             <p>{appInfo.options.length > 0 ? "Here are your options" : "No options"}</p>
-            <p>{appInfo.options.length}</p>
+            <button disabled={appInfo.options.length===0} onClick={onMakeDecision}>What should I do?</button>
             <button onClick={removeOptions}>Remove all options</button>
             {
                 [1,2,3,4,'Dipin Garg',null,undefined,true]
