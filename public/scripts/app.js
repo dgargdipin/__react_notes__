@@ -1,14 +1,8 @@
 "use strict";
 
-var square = function square(i) {
-    return i * i;
+var add = function add(a, b) {
+    console.log(arguments);
+    return a + b;
 };
-var squareArrow = function squareArrow(i) {
-    return i * i;
-};
-var squareArrowConcise = function squareArrowConcise(i) {
-    return i * i;
-};
-console.log(square(10));
-console.log(squareArrow(8));
-console.log(squareArrowConcise(7));
+
+console.log(add(55, 1, 1001));
