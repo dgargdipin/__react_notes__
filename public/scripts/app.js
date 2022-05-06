@@ -55,22 +55,25 @@ function getLocation(location) {
         );
     }
 }
+var count = 0;
+// const someId='some-id'
+var addOne = function addOne() {
+    console.log('addOne');
+};
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        user.name ? user.name : 'Anonymous'
+        'Count: ',
+        count
     ),
-    user.age && user.age >= 18 && React.createElement(
-        'p',
-        null,
-        'Age: ',
-        user.age
-    ),
-    getLocation(user.location)
+    React.createElement(
+        'button',
+        { onClick: addOne },
+        '+1'
+    )
 );
-
 var appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
