@@ -1,8 +1,76 @@
-"use strict";
+'use strict';
 
-var add = function add(a, b) {
-    console.log(arguments);
-    return a + b;
+console.log("App.js is running");
+var appInfo = {
+    heading: 'Hi',
+    subtitle: 'subssssss',
+    options: ['One', 'Two']
+};
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        appInfo.heading
+    ),
+    appInfo.subtitle && React.createElement(
+        'p',
+        null,
+        appInfo.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        appInfo.options.length > 0 ? "Here are your options" : "No options"
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'Item One'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Item two'
+        )
+    )
+);
+var user = {
+    name: 'Dip in',
+    age: 26,
+    location: "India"
 };
 
-console.log(add(55, 1, 1001));
+function getLocation(location) {
+    if (location) {
+        return React.createElement(
+            'p',
+            null,
+            'location: ',
+            location
+        );
+    }
+}
+var templateTwo = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        user.name ? user.name : 'Anonymous'
+    ),
+    user.age && user.age >= 18 && React.createElement(
+        'p',
+        null,
+        'Age: ',
+        user.age
+    ),
+    getLocation(user.location)
+);
+
+var appRoot = document.getElementById('app');
+ReactDOM.render(template, appRoot);
