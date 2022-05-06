@@ -45,6 +45,17 @@ const renderTemplate=()=>{
             <p>{appInfo.options.length > 0 ? "Here are your options" : "No options"}</p>
             <p>{appInfo.options.length}</p>
             <button onClick={removeOptions}>Remove all options</button>
+            {
+                [1,2,3,4,'Dipin Garg',null,undefined,true]
+                
+            }
+            {
+                [<p key="a">a</p>,<p key="b">b</p>,<p key="c">c</p>]
+            }
+            {
+                appInfo.options.map((option,index)=><li key={index}>{option}</li>)
+            }
+            
             <ol>
                 <li>Item One</li>
                 <li>Item Two</li>

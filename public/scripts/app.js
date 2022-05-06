@@ -69,6 +69,27 @@ var renderTemplate = function renderTemplate() {
             { onClick: removeOptions },
             'Remove all options'
         ),
+        [1, 2, 3, 4, 'Dipin Garg', null, undefined, true],
+        [React.createElement(
+            'p',
+            { key: 'a' },
+            'a'
+        ), React.createElement(
+            'p',
+            { key: 'b' },
+            'b'
+        ), React.createElement(
+            'p',
+            { key: 'c' },
+            'c'
+        )],
+        appInfo.options.map(function (option, index) {
+            return React.createElement(
+                'li',
+                { key: index },
+                option
+            );
+        }),
         React.createElement(
             'ol',
             null,
