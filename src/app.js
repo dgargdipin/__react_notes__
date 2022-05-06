@@ -2,11 +2,14 @@ console.log("App.js is running")
 var appInfo={
     heading:'Hi',
     subtitle:'subssssss',
+    options:['One','Two']
 };
 var template = (
     <div>
         <h1>{appInfo.heading}</h1>
-        <p>{appInfo.subtitle}</p>
+        {/* <p>{appInfo.subtitle}</p> */}
+        {appInfo.subtitle && <p>{appInfo.subtitle}</p>}
+        <p>{appInfo.options.length > 0 ? "Here are your options": "No options"}</p>
         <ol>
             <li>
                 Item One
@@ -38,4 +41,4 @@ var templateTwo=(
 );
 
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot)
+ReactDOM.render(template, appRoot)

@@ -3,7 +3,8 @@
 console.log("App.js is running");
 var appInfo = {
     heading: 'Hi',
-    subtitle: 'subssssss'
+    subtitle: 'subssssss',
+    options: ['One', 'Two']
 };
 var template = React.createElement(
     'div',
@@ -13,10 +14,15 @@ var template = React.createElement(
         null,
         appInfo.heading
     ),
-    React.createElement(
+    appInfo.subtitle && React.createElement(
         'p',
         null,
         appInfo.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        appInfo.options.length > 0 ? "Here are your options" : "No options"
     ),
     React.createElement(
         'ol',
@@ -67,4 +73,4 @@ var templateTwo = React.createElement(
 );
 
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
