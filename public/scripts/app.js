@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -8,114 +8,80 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CounterApp = function (_React$Component) {
-    _inherits(CounterApp, _React$Component);
+var VisibleApp = function (_React$Component) {
+    _inherits(VisibleApp, _React$Component);
 
-    function CounterApp(props) {
-        _classCallCheck(this, CounterApp);
+    function VisibleApp(props) {
+        _classCallCheck(this, VisibleApp);
 
-        var _this = _possibleConstructorReturn(this, (CounterApp.__proto__ || Object.getPrototypeOf(CounterApp)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (VisibleApp.__proto__ || Object.getPrototypeOf(VisibleApp)).call(this, props));
 
-        _this.handleAddOne = _this.handleAddOne.bind(_this);
-        _this.handleMinusOne = _this.handleMinusOne.bind(_this);
-        _this.handleReset = _this.handleReset.bind(_this);
+        _this.toggleShow = _this.toggleShow.bind(_this);
         _this.state = {
-            count: 0,
-            name: 'DIpin'
+            show: true
         };
-
         return _this;
     }
 
-    _createClass(CounterApp, [{
-        key: 'handleAddOne',
-        value: function handleAddOne() {
+    _createClass(VisibleApp, [{
+        key: "toggleShow",
+        value: function toggleShow() {
             this.setState(function (prevState) {
                 return {
-                    count: prevState.count + 1
+                    show: !prevState.show
                 };
             });
-            console.log('AddOne');
         }
     }, {
-        key: 'handleMinusOne',
-        value: function handleMinusOne() {
-            console.log('MinusOne');
-        }
-    }, {
-        key: 'handleReset',
-        value: function handleReset() {
-            console.log('Reset');
-        }
-    }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
-                this.state.name,
                 React.createElement(
-                    'h1',
+                    "h1",
                     null,
-                    'Count:',
-                    this.state.count
+                    "Visible toggle"
                 ),
                 React.createElement(
-                    'button',
-                    { onClick: this.handleAddOne },
-                    '+1'
+                    "button",
+                    { onClick: this.toggleShow },
+                    "Toggle"
                 ),
-                React.createElement(
-                    'button',
-                    { onClick: this.handleMinusOne },
-                    '-1'
-                ),
-                React.createElement(
-                    'button',
-                    { onClick: this.handleReset },
-                    'reset'
+                this.state.show && React.createElement(
+                    "p",
+                    null,
+                    "Text to hide/show"
                 )
             );
         }
     }]);
 
-    return CounterApp;
+    return VisibleApp;
 }(React.Component);
 
-var appRoot = document.getElementById('app');
-ReactDOM.render(React.createElement(CounterApp, null), appRoot);
+ReactDOM.render(React.createElement(VisibleApp, null), document.getElementById("app"));
 
-// let count = 0;
-// // const someId='some-id'
-// const addOne = () => {
-//     count++;
-//     console.log('addOne', count);
-//     renderCounterApp();
-// };
-// const minusOne = () => {
-//     count--;
-//     console.log('minusOne', count);
-//     renderCounterApp();
-// };
-// const resetfn = () => {
-//     count = 0;
-//     console.log('reset', count);
-//     renderCounterApp();
-// };
-// const renderCounterApp = () => {
-//     const templateTwo = (
-//         <div>
-//             <h1>
-//                 Count: {count}
-//             </h1>
-//             <button onClick={addOne}>+1</button>
-//             <button onClick={minusOne}>-1</button>
-//             <button onClick={resetfn}>reset</button>
-//         </div>
+// let show=true;
 
-
-//     );
-// var appRoot = document.getElementById('app');
-//     ReactDOM.render(templateTwo, appRoot)
+// const changeVisible=()=>{
+//     show=!show;
+//     render();
 // }
-// // renderCounterApp();
+
+// const render=()=>{
+//     var template = (
+//         <div>
+//             <h1>Visible toggle</h1>
+//             <button onClick={changeVisible}>{show ? 'Hide' : 'Show'}</button>
+//             {show && <p>Text to hide/show</p>}
+//         </div>
+//     );
+
+
+//     const root = document.getElementById("app")
+//     ReactDOM.render(template, root);
+
+// }
+
+// render();
