@@ -38,7 +38,6 @@ const removeOptions = () => {
 }
 const onMakeDecision = () => {
     const randomNum = Math.floor(Math.random() * appInfo.options.length);
-    console.log(randomNum)
     const option = appInfo.options[randomNum];
     alert(option);
 }
