@@ -21,12 +21,14 @@ var IndecisionApp = function (_React$Component) {
         key: "render",
         value: function render() {
             var title = "Indecision";
+            var subtitle = "Put your life in the hands of a computer";
+            var options = ["thing one", "thing two", "thing two"];
             var jsx = React.createElement(
                 "div",
                 null,
-                React.createElement(Header, { title: title }),
+                React.createElement(Header, { title: title, subtitle: subtitle }),
                 React.createElement(Action, null),
-                React.createElement(Options, null),
+                React.createElement(Options, { options: options }),
                 React.createElement(AddOption, null)
             );
             return jsx;
@@ -60,7 +62,7 @@ var Header = function (_React$Component2) {
                 React.createElement(
                     "h2",
                     null,
-                    "Subtitle"
+                    this.props.subtitle
                 )
             );
         }
@@ -79,6 +81,11 @@ var Action = function (_React$Component3) {
     }
 
     _createClass(Action, [{
+        key: "handlePick",
+        value: function handlePick() {
+            alert('handlePick');
+        }
+    }, {
         key: "render",
         value: function render() {
             return React.createElement(
@@ -86,7 +93,7 @@ var Action = function (_React$Component3) {
                 null,
                 React.createElement(
                     "button",
-                    null,
+                    { onClick: this.handlePick },
                     "What Should I do?"
                 )
             );
@@ -106,13 +113,25 @@ var Options = function (_React$Component4) {
     }
 
     _createClass(Options, [{
+        key: "handleRemoveAll",
+        value: function handleRemoveAll() {
+            console.log(this);
+            alert('handleRemoveAll');
+        }
+    }, {
         key: "render",
         value: function render() {
             return React.createElement(
                 "div",
                 null,
-                "Options component here",
-                React.createElement(Option, null)
+                React.createElement(
+                    "button",
+                    { onClick: this.handleRemoveAll },
+                    "Remove all"
+                ),
+                this.props.options.map(function (item) {
+                    return React.createElement(Option, { key: item, optionText: item });
+                })
             );
         }
     }]);
@@ -130,12 +149,32 @@ var AddOption = function (_React$Component5) {
     }
 
     _createClass(AddOption, [{
+        key: "handleAddOption",
+        value: function handleAddOption(e) {
+            e.preventDefault();
+            var submitted = e.target.elements.option.value.trim();
+            if (submitted) {
+                e.target.elements.option.value = '';
+                alert(submitted);
+            }
+        }
+    }, {
         key: "render",
         value: function render() {
             return React.createElement(
                 "div",
                 null,
-                "AddOption component here"
+                "AddOption component here",
+                React.createElement(
+                    "form",
+                    { onSubmit: this.handleAddOption },
+                    React.createElement("input", { type: "text", name: "option" }),
+                    React.createElement(
+                        "button",
+                        null,
+                        "Submit"
+                    )
+                )
             );
         }
     }]);
@@ -158,7 +197,8 @@ var Option = function (_React$Component6) {
             return React.createElement(
                 "div",
                 null,
-                "Option Component Here"
+                "Option: ",
+                this.props.optionText
             );
         }
     }]);

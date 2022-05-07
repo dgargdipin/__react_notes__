@@ -26,7 +26,19 @@ class Student extends Person{
     }
 
 }
+class WithoutConstructorClass{
 
+    ret3(){
+        this.a=3;
+        return 3;
+    }
+
+    accessThis(){
+        console.log(this)
+    }
+    
+
+}
 
 class Traveller extends Person{
     constructor(name,age,homeLocation){
@@ -62,3 +74,6 @@ console.log(traveller2.getGreeting())
 // console.log(other.getGreeting());
 // console.log(other.getDescription());
 
+const WithoutConstructorClassInstance = new WithoutConstructorClass();
+WithoutConstructorClassInstance.ret3()
+WithoutConstructorClassInstance.accessThis()
