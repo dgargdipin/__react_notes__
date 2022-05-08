@@ -20,7 +20,7 @@ class IndecisionApp extends React.Component{
         this.handleAction = this.handleAction.bind(this)
         this.handleDeleteOption=this.handleDeleteOption.bind(this)
         this.state={
-            options:props.options
+            options:[]
         };
         console.log('Indecision constructor fired')
     }
@@ -92,9 +92,6 @@ class IndecisionApp extends React.Component{
         return jsx;
 
     }
-}
-IndecisionApp.defaultProps={
-    options:[]
 }
 const Header=(props)=>{
     return (

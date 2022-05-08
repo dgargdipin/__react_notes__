@@ -6,11 +6,25 @@ class CounterApp extends React.Component {
         this.handleMinusOne = this.handleMinusOne.bind(this);
         this.handleReset = this.handleReset.bind(this);
         this.state = {
-            count: props.count,
+            count: 0,
             name: 'DIpin'
         };
 
     }
+
+    componentDidUpdate(prevProps,prevState){
+        if(this.state.count!=prevState.count){
+            localStorage.setItem('count',this.state.count);
+        }
+    }
+    componentDidMount(){
+        const numString=localStorage.getItem('count')
+        const num = parseInt(numString,10)
+        if(!isNaN(num)){
+            this.setState(()=>({count:num}))
+        }
+    }
+
     handleAddOne() {
         this.setState((prevState) => {
             return {
@@ -46,9 +60,6 @@ class CounterApp extends React.Component {
         )
 
     }
-}
-CounterApp.defaultProps={
-    count:0
 }
 
 var appRoot = document.getElementById('app');
