@@ -29,19 +29,10 @@ class IndecisionApp extends React.Component{
         else if(this.state.options.indexOf(option)>-1){
             return 'Task already exists'
         }
-        this.setState((prevState)=>{
-            return {
-                options:prevState.options.concat([option])
-            }
-
-        })
+        this.setState((prevState)=>({options:prevState.options.concat([option])}))
     }
     handleDeleteOptions(){
-        this.setState(()=>{
-            return {
-                options:[]
-            };
-        })
+        this.setState(()=>({options:[]}))
     }
     handleAction(){
         const randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -118,9 +109,7 @@ class AddOption extends React.Component{
         e.preventDefault();
         const submitted = e.target.elements.option.value
         const error=this.props.addOptionHandle(submitted)
-        this.setState(()=>{
-            return {error};
-        });
+        this.setState(()=>({error}));
         e.target.elements.option.value=''
 
         
