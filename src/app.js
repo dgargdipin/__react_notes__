@@ -18,6 +18,7 @@ class IndecisionApp extends React.Component{
         this.addOptionHandle = this.addOptionHandle.bind(this)
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
         this.handleAction = this.handleAction.bind(this)
+        this.handleDeleteOption=this.handleDeleteOption.bind(this)
         this.state={
             options:props.options
         };
@@ -33,6 +34,9 @@ class IndecisionApp extends React.Component{
     }
     handleDeleteOptions(){
         this.setState(()=>({options:[]}))
+    }
+    handleDeleteOption(option){
+        console.log('HDO',option);
     }
     handleAction(){
         const randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -52,6 +56,7 @@ class IndecisionApp extends React.Component{
                 <Options 
                     options={this.state.options}
                     handleDeleteOptions={this.handleDeleteOptions}
+                    handleDeleteOption={this.handleDeleteOption}
 
                 />
                 <AddOption addOptionHandle={this.addOptionHandle}/>

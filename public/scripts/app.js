@@ -33,6 +33,7 @@ var IndecisionApp = function (_React$Component) {
         _this.addOptionHandle = _this.addOptionHandle.bind(_this);
         _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
         _this.handleAction = _this.handleAction.bind(_this);
+        _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
         _this.state = {
             options: props.options
         };
@@ -59,6 +60,11 @@ var IndecisionApp = function (_React$Component) {
             });
         }
     }, {
+        key: 'handleDeleteOption',
+        value: function handleDeleteOption(option) {
+            console.log('HDO', option);
+        }
+    }, {
         key: 'handleAction',
         value: function handleAction() {
             var randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -80,7 +86,8 @@ var IndecisionApp = function (_React$Component) {
                 }),
                 React.createElement(Options, {
                     options: this.state.options,
-                    handleDeleteOptions: this.handleDeleteOptions
+                    handleDeleteOptions: this.handleDeleteOptions,
+                    handleDeleteOption: this.handleDeleteOption
 
                 }),
                 React.createElement(AddOption, { addOptionHandle: this.addOptionHandle })

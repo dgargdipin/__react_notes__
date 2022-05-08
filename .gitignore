@@ -57,11 +57,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
 # Dependency directories
 node_modules/
 jspm_packages/
-
+public/scripts/
 # Optional npm cache directory
 .npm
 
