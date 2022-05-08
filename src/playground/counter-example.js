@@ -48,11 +48,11 @@ class CounterApp extends React.Component {
     }
 }
 CounterApp.defaultProps={
-    count:10
+    count:0
 }
 
 var appRoot = document.getElementById('app');
-ReactDOM.render(<CounterApp count={0} />, appRoot)
+ReactDOM.render(<CounterApp/>, appRoot)
 
 // let count = 0;
 // // const someId='some-id'

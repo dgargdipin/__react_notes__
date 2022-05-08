@@ -91,11 +91,11 @@ var CounterApp = function (_React$Component) {
 }(React.Component);
 
 CounterApp.defaultProps = {
-    count: 10
+    count: 0
 };
 
 var appRoot = document.getElementById('app');
-ReactDOM.render(React.createElement(CounterApp, { count: 0 }), appRoot);
+ReactDOM.render(React.createElement(CounterApp, null), appRoot);
 
 // let count = 0;
 // // const someId='some-id'
