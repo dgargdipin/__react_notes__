@@ -52,7 +52,7 @@ CounterApp.defaultProps={
 }
 
 var appRoot = document.getElementById('app');
-ReactDOM.render(<CounterApp />, appRoot)
+ReactDOM.render(<CounterApp count={0} />, appRoot)
 
 // let count = 0;
 // // const someId='some-id'

@@ -95,7 +95,7 @@ CounterApp.defaultProps = {
 };
 
 var appRoot = document.getElementById('app');
-ReactDOM.render(React.createElement(CounterApp, null), appRoot);
+ReactDOM.render(React.createElement(CounterApp, { count: 0 }), appRoot);
 
 // let count = 0;
 // // const someId='some-id'
