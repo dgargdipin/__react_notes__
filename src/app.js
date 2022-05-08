@@ -19,7 +19,7 @@ class IndecisionApp extends React.Component{
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
         this.handleAction = this.handleAction.bind(this)
         this.state={
-            options:[]
+            options:props.options
         };
     }
     addOptionHandle(option){
@@ -69,6 +69,9 @@ class IndecisionApp extends React.Component{
         return jsx;
 
     }
+}
+IndecisionApp.defaultProps={
+    options:[]
 }
 const Header=(props)=>{
     return (
