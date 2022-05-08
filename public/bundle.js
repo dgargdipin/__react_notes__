@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"add\": () => (/* binding */ add),\n/* harmony export */   \"default\": () => (/* binding */ subtract),\n/* harmony export */   \"newfn\": () => (/* binding */ newfn),\n/* harmony export */   \"square\": () => (/* binding */ square)\n/* harmony export */ });\nconsole.log('utils.js is running')\n\nconst square=(x)=>x*x;\nconst add=(a,b)=>a+b;\nconst subtract=(a,b)=>a-b;\nconst newfn=()=>'abc'\n\n\n//# sourceURL=webpack://indecision-app/./src/utils.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"add\": () => (/* binding */ add),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   \"newfn\": () => (/* binding */ newfn),\n/* harmony export */   \"square\": () => (/* binding */ square)\n/* harmony export */ });\nconsole.log('utils.js is running')\n\nconst square=(x)=>x*x;\nconst add=(a,b)=>a+b;\nconst subtract=(a,b)=>a-b;\nconst newfn=()=>'abc'\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (subtract);\n\n//# sourceURL=webpack://indecision-app/./src/utils.js?");
 
 /***/ })
 
