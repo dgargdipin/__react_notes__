@@ -6,7 +6,7 @@ class CounterApp extends React.Component {
         this.handleMinusOne = this.handleMinusOne.bind(this);
         this.handleReset = this.handleReset.bind(this);
         this.state = {
-            count: 0,
+            count: props.count,
             name: 'DIpin'
         };
 
@@ -46,6 +46,9 @@ class CounterApp extends React.Component {
         )
 
     }
+}
+CounterApp.defaultProps={
+    count:10
 }
 
 var appRoot = document.getElementById('app');

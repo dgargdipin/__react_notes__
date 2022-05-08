@@ -154,4 +154,4 @@ const Option=(props)=>{
 //         </div>
 //     )
 // }
-ReactDOM.render(<IndecisionApp options={['Option 1','Option 2']}/>,document.getElementById('app'));
+ReactDOM.render(<IndecisionApp/>,document.getElementById('app'));
