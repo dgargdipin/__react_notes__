@@ -37,10 +37,26 @@ var IndecisionApp = function (_React$Component) {
         _this.state = {
             options: props.options
         };
+        console.log('Indecision constructor fired');
         return _this;
     }
 
     _createClass(IndecisionApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('Indecision component mounted');
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            console.log('Indecision component updated');
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('Indecision component wil unmount');
+        }
+    }, {
         key: 'addOptionHandle',
         value: function addOptionHandle(option) {
             if (!option.trim()) {

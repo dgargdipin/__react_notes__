@@ -22,6 +22,16 @@ class IndecisionApp extends React.Component{
         this.state={
             options:props.options
         };
+        console.log('Indecision constructor fired')
+    }
+    componentDidMount(){
+        console.log('Indecision component mounted')
+    }
+    componentDidUpdate(prevProps,prevState){
+        console.log('Indecision component updated')
+    }
+    componentWillUnmount(){
+        console.log('Indecision component wil unmount')
     }
     addOptionHandle(option){
         if (!option.trim()) {
