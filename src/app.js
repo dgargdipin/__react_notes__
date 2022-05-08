@@ -35,8 +35,10 @@ class IndecisionApp extends React.Component{
     handleDeleteOptions(){
         this.setState(()=>({options:[]}))
     }
-    handleDeleteOption(option){
-        console.log('HDO',option);
+    handleDeleteOption(optionIdx){
+        this.setState((prevState) => ({ 
+            options: prevState.options.filter((_, index) => optionIdx!=index)
+        }));
     }
     handleAction(){
         const randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -97,7 +99,7 @@ const Options=(props)=>{
     return (
         <div>
             <button onClick={props.handleDeleteOptions}>Remove all</button>
-            {props.options.map((item) => <Option key={item} optionText={item} />)}
+            {props.options.map((item, index) => <Option key={index} optionText={item} index={index} handleDeleteOption={props.handleDeleteOption} />)}
         </div>
     )
 }
@@ -135,6 +137,7 @@ const Option=(props)=>{
     return (
         <div>
             Option: {props.optionText}
+            <button onClick={(e) => { props.handleDeleteOption(props.index)}}>Delete</button>
         </div>
     );
 

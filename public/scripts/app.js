@@ -61,8 +61,14 @@ var IndecisionApp = function (_React$Component) {
         }
     }, {
         key: 'handleDeleteOption',
-        value: function handleDeleteOption(option) {
-            console.log('HDO', option);
+        value: function handleDeleteOption(optionIdx) {
+            this.setState(function (prevState) {
+                return {
+                    options: prevState.options.filter(function (_, index) {
+                        return optionIdx != index;
+                    })
+                };
+            });
         }
     }, {
         key: 'handleAction',
@@ -145,8 +151,8 @@ var Options = function Options(props) {
             { onClick: props.handleDeleteOptions },
             'Remove all'
         ),
-        props.options.map(function (item) {
-            return React.createElement(Option, { key: item, optionText: item });
+        props.options.map(function (item, index) {
+            return React.createElement(Option, { key: index, optionText: item, index: index, handleDeleteOption: props.handleDeleteOption });
         })
     );
 };
@@ -211,7 +217,14 @@ var Option = function Option(props) {
         'div',
         null,
         'Option: ',
-        props.optionText
+        props.optionText,
+        React.createElement(
+            'button',
+            { onClick: function onClick(e) {
+                    props.handleDeleteOption(props.index);
+                } },
+            'Delete'
+        )
     );
 };
 
