@@ -78,7 +78,7 @@ var IndecisionApp = function (_React$Component) {
             var jsx = React.createElement(
                 'div',
                 null,
-                React.createElement(Header, { title: title, subtitle: subtitle }),
+                React.createElement(Header, { subtitle: subtitle }),
                 React.createElement(Action, {
                     hasOptions: this.state.options.length > 0,
                     handleAction: this.handleAction
@@ -112,6 +112,9 @@ var Header = function Header(props) {
             props.subtitle
         )
     );
+};
+Header.defaultProps = {
+    title: 'Default title'
 };
 
 var Action = function Action(props) {
